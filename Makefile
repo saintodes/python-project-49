@@ -13,3 +13,6 @@ publish: #--dry-run poetry publishing
 
 package-install:
 		python3 -m pip install --user dist/*.whl
+
+lint: #launching linter flake8
+		poetry run flake8 brain_games
