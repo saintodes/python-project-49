@@ -1,1 +1,6 @@
 .venv/
+
+dist/
+
+brain_games/__pyache__/
+
