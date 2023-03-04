@@ -18,7 +18,6 @@ def get_correct_answer():
         correct_answer = 'no'
 
 
-
 def print_rules_and_question():
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
     print(f'Question: {digit}')

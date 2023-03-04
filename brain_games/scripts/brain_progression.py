@@ -13,7 +13,8 @@ def get_correct_answer():
     numberic_progression.append(first_number)
     progression_step = randint(5, 10)
     while len(numberic_progression) != 10:
-        numberic_progression.append(numberic_progression[-1] + progression_step)
+        numberic_progression.append(numberic_progression[-1]
+                                    + progression_step)
     random_index = randint(0, len(numberic_progression) - 1)
     correct_answer = numberic_progression[random_index]
     numberic_progression[random_index] = '..'
