@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import prompt
+from prompt import integer
 from random import randint
 from brain_games.common_logic import welcome_user
 
@@ -32,7 +32,7 @@ def print_rules_and_question():
 
 def get_user_answer():
     global user_answer
-    user_answer = prompt.integer('Your answer: ')
+    user_answer = integer('Your answer: ')
 
 
 def compare_results():
