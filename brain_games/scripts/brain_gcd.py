@@ -12,7 +12,6 @@ def get_correct_answer():
     digit_1 = randint(1, 100)
     digit_2 = randint(1, 100)
     correct_answer = gcd(digit_1, digit_2)
-    # print(f'd1= {digit_1}, d2= {digit_2}, max_gcd= {correct_answer}')
 
 
 def print_rules_and_question():

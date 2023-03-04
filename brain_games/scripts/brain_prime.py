@@ -16,7 +16,6 @@ def get_correct_answer():
         correct_answer = 'yes'
     else:
         correct_answer = 'no'
-    # print(correct_answer)
 
 
 

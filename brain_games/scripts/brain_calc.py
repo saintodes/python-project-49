@@ -20,9 +20,6 @@ def get_correct_answer():
     if operator == 3:
         correct_answer = digit_1 * digit_2
         operator_sign = '*'
-    # print(f'__________d1 = {digit_1}, d2 = {digit_2}')
-    # print(f'__________correct answer is {correct_answer} '
-    #       f'and sign (+ or - or /) is {operator_sign}')
 
 
 def print_rules_and_question():
