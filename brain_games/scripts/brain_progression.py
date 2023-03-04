@@ -18,8 +18,6 @@ def get_correct_answer():
     random_index = randint(0, len(numberic_progression) - 1)
     correct_answer = numberic_progression[random_index]
     numberic_progression[random_index] = '..'
-    # print(numberic_progression)
-    # print(f'correct answer = {correct_answer}')
 
 
 def print_rules_and_question():
@@ -39,7 +37,7 @@ def compare_results():
         print('Correct!')
         games_played_counter += 1
         if games_played_counter == 3:
-            print(f'Congratulations, {name}')
+            print(f'Congratulations, {name}!')
     else:
         print(f"'{user_answer}' is wrong answer ;(. "
               f"Correct answer was '{correct_answer}'")
