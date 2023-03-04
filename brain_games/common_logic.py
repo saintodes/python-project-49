@@ -1,5 +1,8 @@
 import prompt
+
 global name
+
+
 # 0 Creating games played counter.
 # 1 Welcoming user
 # 2 Telling rules and asking question.
