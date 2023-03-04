@@ -1,36 +1,53 @@
+# import prompt
 from random import randint
-from brain_games.cli import welcome_user
+from brain_games.common_logic import welcome_user
+games_played_counter = 0
 
 
-def is_even_check_game():
-    from brain_games.cli import name
+def get_correct_answer():
+    global random_number, is_even
+    random_number = randint(1,100)
+    if random_number % 2 == 0:
+        is_even = 'yes'
+    else:
+        is_even = 'no'
+
+
+def print_rules_ask_question():
     print('Answer "yes" if the number is even, otherwise answer "no".')
-    is_even_game_attempt_counter = 0
-    while is_even_game_attempt_counter != 3:
-        random_number_from0to100 = randint(0, 100)
-        if random_number_from0to100 % 2 == 0:
-            is_even_game_right_answer = 'yes'
-        else:
-            is_even_game_right_answer = 'no'
+    print(f'Question: {random_number}')
 
-        print(f'Question: {random_number_from0to100}')
-        is_even_game_answer = input('Your answer:')
 
-        if is_even_game_answer == is_even_game_right_answer:
-            print('Correct!')
-            is_even_game_attempt_counter += 1
-            if is_even_game_attempt_counter == 3:
-                print(f'Congratulations, {name}')
-        else:
-            print(f"'{is_even_game_answer}' is wrong answer"
-                  f" ;(. Correct was '{is_even_game_right_answer}'")
-            print(f"Let's try again, {name}")
-            break
+def get_user_answer():
+    global user_answer
+    user_answer = input()
+
+
+def compare_results():
+    global games_played_counter
+    if user_answer == is_even:
+        print('Correct!')
+        games_played_counter += 1
+        if games_played_counter == 3:
+            print(f'Congratulations, {name}')
+    else:
+        print(f'{user_answer} is wrong answer')
+        print(f"Let's try again, {name}!")
+        games_played_counter = 3
+
 
 
 def main():
-    welcome_user()
-    is_even_check_game()
+    global name, games_played_counter
+    name = welcome_user()
+    while games_played_counter != 3:
+        get_correct_answer()
+        print_rules_ask_question()
+        get_user_answer()
+        compare_results()
+
+
+
 
 
 if __name__ == '__main__':
