@@ -34,7 +34,7 @@ def compare_results():
         print('Correct!')
         games_played_counter += 1
         if games_played_counter == 3:
-            print(f'Congratulations, {name}')
+            print(f'Congratulations, {name}!')
     else:
         print(f"'{user_answer}' is wrong answer ;(. "
               f"Correct answer was '{correct_answer}'")
