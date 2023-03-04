@@ -41,7 +41,7 @@ def get_correct_answer():
 
 def print_rules_and_question():
     print('What is the result of the expression? ')
-    print(f'{digit_1} {operator_sign} {digit_2}')
+    print(f'Question: {digit_1} {operator_sign} {digit_2}')
 
 
 def get_user_answer():
