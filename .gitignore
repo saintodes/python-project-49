@@ -2,6 +2,6 @@
 
 dist/
 
-brain_games/__pyache__/
+brain_games/scripts/__pyache__/
 
 .idea/
