@@ -1,12 +1,13 @@
 # import prompt
 from random import randint
 from brain_games.common_logic import welcome_user
+
 games_played_counter = 0
 
 
 def get_correct_answer():
     global random_number, is_even
-    random_number = randint(1,100)
+    random_number = randint(1, 100)
     if random_number % 2 == 0:
         is_even = 'yes'
     else:
@@ -36,7 +37,6 @@ def compare_results():
         games_played_counter = 3
 
 
-
 def main():
     global name, games_played_counter
     name = welcome_user()
@@ -45,9 +45,6 @@ def main():
         print_rules_ask_question()
         get_user_answer()
         compare_results()
-
-
-
 
 
 if __name__ == '__main__':
