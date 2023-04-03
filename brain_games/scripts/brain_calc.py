@@ -18,7 +18,7 @@
 # 6.2 If false game ends.
 from prompt import integer
 from random import randint
-from brain_games.common_logic import welcome_user
+from brain_games.game_engine import welcome_user
 
 games_played_counter = 0
 

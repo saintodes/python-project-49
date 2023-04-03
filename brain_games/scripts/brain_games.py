@@ -9,7 +9,7 @@
 # 6.1.1 If true games played counter increases to 1.
 # 6.1.2 If games played counter == 3 game ends with congratulations.
 # 6.2 If false game ends.
-from brain_games.common_logic import welcome_user
+from brain_games.game_engine import welcome_user
 
 
 def main():
