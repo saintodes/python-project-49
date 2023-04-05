@@ -1,4 +1,4 @@
-#!/home/sainttu/Projects/python-project-49/venv/bin/python
+#!/home/sainttu/Projects/python-project-49/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
