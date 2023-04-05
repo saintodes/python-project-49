@@ -1,9 +1,10 @@
-#Calculation game.
+# Calculation game.
 #
-from random import randint, choice
 from operator import add, sub, mul
+from random import randint, choice
 
 QUESTION_TEXT = 'What is the result of the expression? '
+
 
 def get_question_and_answer():
     difficullty_min = 1

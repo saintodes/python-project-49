@@ -2,7 +2,6 @@
 
 from random import randint
 
-
 QUESTION_TEXT = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 

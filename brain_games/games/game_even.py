@@ -5,6 +5,7 @@ from random import randint
 
 QUESTION_TEXT = 'Answer "yes" if the number is even, otherwise answer "no".'
 
+
 def get_question_and_answer():
     difficullty_min = 1
     difficullty_max = 100
