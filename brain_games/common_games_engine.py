@@ -20,3 +20,8 @@ def run_game(task, question_and_answer):
                  f"Correct answer was '{correct_answer}'")
             print(f"Let's try again, {username}")
     print(f'Congratulations, {username}!')
+
+def welcome_user():
+    name = string('May I have your name? ')
+    print(f'Hello, {name}!')
+    print('Welcome to the Brain Games!')
