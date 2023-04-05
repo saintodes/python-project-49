@@ -3,8 +3,6 @@
 from random import randint, choice
 from operator import add, sub, mul
 
-
-
 QUESTION_TEXT = 'What is the result of the expression? '
 
 def get_question_and_answer():
@@ -18,6 +16,6 @@ def get_question_and_answer():
         ('*', mul)
     )
     operation_name, operation = choice(operations)
-    question = f'{value1} {operation_name} {value2}'
+    question = f'{value1} {operation_name} {value2} OLOLOLO'
     answer = operation(value1, value2)
     return question, str(answer)
