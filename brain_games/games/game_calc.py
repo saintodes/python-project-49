@@ -16,6 +16,6 @@ def get_question_and_answer():
         ('*', mul)
     )
     operation_name, operation = choice(operations)
-    question = f'{value1} {operation_name} {value2} OLOLOLO'
+    question = f'{value1} {operation_name} {value2}'
     answer = operation(value1, value2)
     return question, str(answer)
