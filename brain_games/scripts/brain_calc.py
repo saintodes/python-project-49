@@ -16,32 +16,33 @@
 # 6.1.1 If true games played counter increases to 1.
 # 6.1.2 If games played counter == 3 game ends with congratulations.
 # 6.2 If false game ends.
+import random
+
 from prompt import integer
 from random import randint
 from brain_games.game_engine import welcome_user
+from random import choice
 
 games_played_counter = 0
 
 
 def get_correct_answer():
-    global operator_sign, digit_1, digit_2, correct_answer
     digit_1 = randint(1, 10)
     digit_2 = randint(1, 10)
-    operator = randint(1, 3)
-    if operator == 1:
+    operator = random.choice(('+', '-', '*'))
+    if operator == '+':
         correct_answer = digit_1 + digit_2
-        operator_sign = '+'
-    if operator == 2:
+    if operator == '-':
         correct_answer = digit_1 - digit_2
-        operator_sign = '-'
-    if operator == 3:
+    if operator == '*':
         correct_answer = digit_1 * digit_2
-        operator_sign = '*'
+    return digit_1, digit_2, operator, correct_answer
 
 
 def print_rules_and_question():
+    digit_1, digit_2, operator = get_correct_answer()
     print('What is the result of the expression? ')
-    print(f'Question: {digit_1} {operator_sign} {digit_2}')
+    print(f'Question: {digit_1} {operator} {digit_2}')
 
 
 def get_user_answer():
@@ -50,6 +51,8 @@ def get_user_answer():
 
 
 def compare_results():
+    correct_answer = get_correct_answer()
+    name = welcome_user()
     global games_played_counter
     if correct_answer == user_answer:
         print('Correct!')
@@ -64,7 +67,7 @@ def compare_results():
 
 
 def main():
-    global games_played_counter, name
+    global games_played_counter
     name = welcome_user()
     while games_played_counter != 3:
         get_correct_answer()

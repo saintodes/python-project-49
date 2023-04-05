@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from prompt import integer
 from math import gcd
-from random import randint
+from random import randintп
 from brain_games.game_engine import welcome_user
 
 games_played_counter = 0
