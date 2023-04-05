@@ -9,7 +9,7 @@ def run_game(task, question_and_answer):
     games_played_counter = 0
     while games_played_counter != 3:
         question, correct_answer = question_and_answer()
-        print(f'{question}')
+        print(f'Question: {question}')
         user_answer = string('Your answer: ')
         if user_answer == correct_answer:
             print('Correct!')
