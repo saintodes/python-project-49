@@ -1,22 +1,29 @@
-# Calculation game.
-#
 from operator import add, sub, mul
 from random import randint, choice
 
+# Define constants
 QUESTION_TEXT = 'What is the result of the expression? '
-
+DIFFICULTY_MIN = 1
+DIFFICULTY_MAX = 10
+OPERATIONS = (
+    ('+', add),
+    ('-', sub),
+    ('*', mul)
+)
 
 def get_question_and_answer():
-    difficullty_min = 1
-    difficullty_max = 10
-    value1 = randint(difficullty_min, difficullty_max)
-    value2 = randint(difficullty_min, difficullty_max)
-    operations = (
-        ('+', add),
-        ('-', sub),
-        ('*', mul)
-    )
-    operation_name, operation = choice(operations)
-    question = f'{value1} {operation_name} {value2}'
-    answer = operation(value1, value2)
+    """
+    Function to generate a question and its answer for a calculation game.
+    The question is a simple arithmetic operation (addition, subtraction, multiplication)
+    with operands randomly chosen based on the defined difficulty (min, max).
+    
+    Returns:
+        question (str): The arithmetic operation as a string.
+        answer (str): The result of the arithmetic operation as a string.
+    """
+    operand1 = randint(DIFFICULTY_MIN, DIFFICULTY_MAX)
+    operand2 = randint(DIFFICULTY_MIN, DIFFICULTY_MAX)
+    operation_symbol, operation_func = choice(OPERATIONS)
+    question = f'{operand1} {operation_symbol} {operand2}'
+    answer = operation_func(operand1, operand2)
     return question, str(answer)
