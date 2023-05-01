@@ -11,12 +11,14 @@ OPERATIONS = (
     ('*', mul)
 )
 
+
 def get_question_and_answer():
     """
     Function to generate a question and its answer for a calculation game.
-    The question is a simple arithmetic operation (addition, subtraction, multiplication)
+    The question is a simple arithmetic operation
+    (addition, subtraction, multiplication)
     with operands randomly chosen based on the defined difficulty (min, max).
-    
+
     Returns:
         question (str): The arithmetic operation as a string.
         answer (str): The result of the arithmetic operation as a string.
