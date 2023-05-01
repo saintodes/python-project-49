@@ -2,10 +2,10 @@ from random import randint
 
 # Define constants
 QUESTION_TEXT = 'What number is missing in the progression?'
-PROGRESSION_FIRST_DIGIT_MIN = 1
-PROGRESSION_FIRST_DIGIT_MAX = 25
-PROGRESSION_STEP_MIN = 5
-PROGRESSION_STEP_MAX = 10
+FIRST_DIGIT_MIN = 1
+FIRST_DIGIT_MAX = 25
+STEP_MIN = 5
+STEP_MAX = 10
 PROGRESSION_LENGTH = 10
 
 def get_question_and_answer():
@@ -18,12 +18,12 @@ def get_question_and_answer():
         answer (str): The missing number in the progression as a string.
     """
     progression = []
-    first_number = randint(PROGRESSION_FIRST_DIGIT_MIN, PROGRESSION_FIRST_DIGIT_MAX)
+    first_number = randint(FIRST_DIGIT_MIN, FIRST_DIGIT_MAX)
     progression.append(first_number)
-    progression_step = randint(PROGRESSION_STEP_MIN, PROGRESSION_STEP_MAX)
+    step = randint(STEP_MIN, STEP_MAX)
 
     for _ in range(PROGRESSION_LENGTH - 1):  # Subtract 1 because the first number is already added
-        progression.append(progression[-1] + progression_step)
+        progression.append(progression[-1] + step)
 
     missing_index = randint(0, len(progression) - 1)
     answer = progression[missing_index]

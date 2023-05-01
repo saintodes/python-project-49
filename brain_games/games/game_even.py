@@ -1,32 +1,19 @@
-from operator import add, sub, mul
-from random import randint, choice
+from random import randint
 
-QUESTION_TEXT = 'What is the result of the expression? '
-
+# Define constants
+QUESTION_TEXT = 'Answer "yes" if the number is even, otherwise answer "no".'
 DIFFICULTY_MIN = 1
-DIFFICULTY_MAX = 10
+DIFFICULTY_MAX = 100
 
-OPERATIONS = (
-    ('+', add),
-    ('-', sub),
-    ('*', mul)
-)
-
-def generate_question_and_answer(difficulty_min=DIFFICULTY_MIN, difficulty_max=DIFFICULTY_MAX):
+def get_question_and_answer():
     """
-    Generate a mathematical question and its answer.
-    
-    Parameters:
-        difficulty_min (int): The minimum value for the random numbers. Default is 1.
-        difficulty_max (int): The maximum value for the random numbers. Default is 10.
+    Function to generate a question and its answer for determining if a number is even or odd.
+    The number is randomly chosen based on the defined difficulty (min, max).
     
     Returns:
-        str: The mathematical expression as a question.
-        str: The answer to the mathematical expression as a string.
+        question (int): The randomly chosen number.
+        answer (str): 'yes' if the number is even, 'no' otherwise.
     """
-    num1 = randint(difficulty_min, difficulty_max)
-    num2 = randint(difficulty_min, difficulty_max)
-    symbol, operation = choice(OPERATIONS)
-    question = f'{num1} {symbol} {num2}'
-    answer = operation(num1, num2)
-    return question, str(answer)
+    number = randint(DIFFICULTY_MIN, DIFFICULTY_MAX)
+    answer = 'yes' if number % 2 == 0 else 'no'
+    return number, answer
