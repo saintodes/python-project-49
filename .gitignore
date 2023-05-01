@@ -7,3 +7,5 @@ __pycache__
 .idea/
 
 brain-venv/
+
+brain_games/scripts/__pycache__/
