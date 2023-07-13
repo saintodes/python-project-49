@@ -1,5 +1,7 @@
 from prompt import string
 
+TOTAL_ROUNDS = 3
+
 
 def get_input(prompt_message):
     return string(prompt_message)
@@ -27,15 +29,15 @@ def play_round(question_and_answer):
     return False
 
 
-def play_game(username, question_and_answer, total_rounds):
+def play_game(username, question_and_answer, total_rounds=TOTAL_ROUNDS):
     rounds_won = 0
 
-    while rounds_won < total_rounds:
-        if play_round(question_and_answer):
-            rounds_won += 1
-        else:
+    for _ in range(total_rounds):
+        if not play_round(question_and_answer):
             print(f"Let's try again, {username}!")
             return False
+
+        rounds_won += 1
 
     return True
 
