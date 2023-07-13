@@ -1,12 +1,21 @@
 from prompt import string
 
 
-def play_round(username, question_and_answer):
+def get_input(prompt_message):
+    return string(prompt_message)
+
+
+def welcome_message(task):
+    print("Welcome to the Brain Games!")
+    username = get_input("May I have your name? ")
+    print(f"Hello, {username}!\n{task}")
+    return username
+
+
+def play_round(question_and_answer):
     question, correct_answer = question_and_answer()
-
     print(f"Question: {question}")
-
-    user_answer = string("Your answer: ")
+    user_answer = get_input("Your answer: ")
 
     if user_answer.lower() == correct_answer.lower():
         print("Correct!")
@@ -14,32 +23,29 @@ def play_round(username, question_and_answer):
 
     print(
         f"'{user_answer}' is wrong answer ;(. "
-        f"Correct answer was '{correct_answer}'"
-        f"\nLet's try again, {username}!")
-
+        f"Correct answer was '{correct_answer}'")
     return False
 
 
-def run_game(task, question_and_answer):
-    correct_answers = 0
+def play_game(username, question_and_answer, total_rounds):
+    rounds_won = 0
 
-    print("Welcome to the Brain Games!")
-    username = string("May I have your name? ")
-    print(f"Hello, {username}!")
-    print(f"{task}")
+    while rounds_won < total_rounds:
+        if play_round(question_and_answer):
+            rounds_won += 1
+        else:
+            print(f"Let's try again, {username}!")
+            return False
 
-    while correct_answers != 3:
-        round_result = play_round(username, question_and_answer)
-        if not round_result:
-            print(f"Thank you for playing, {username}!")
-        correct_answers += 1
-
-    print(f"Congratulations, {username}!")
+    return True
 
 
-def welcome_user():
-    name = string("May I have your name? ")
+def final_message(game_won, username):
+    print(f"Congratulations, {username}!" if game_won
+          else "Better luck next time!")
 
-    print(f"Hello, {name}!")
 
-    print("Welcome to the Brain Games!")
+def run_game(task, question_and_answer, total_rounds=3):
+    username = welcome_message(task)
+    game_result = play_game(username, question_and_answer, total_rounds)
+    final_message(game_result, username)
