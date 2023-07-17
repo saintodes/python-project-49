@@ -1,14 +1,6 @@
 #!/usr/bin/env python3
 
-from prompt import string
-
-
-def welcome_user():
-    name = string("May I have your name? ")
-
-    print(f"Hello, {name}!")
-
-    print("Welcome to the Brain Games!")
+from brain_games.games.cli import welcome_user
 
 
 def main():
