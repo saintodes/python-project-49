@@ -19,7 +19,8 @@ def run_game(task, question_and_answer, total_rounds=TOTAL_ROUNDS):
             print("Correct!")
             rounds_won += 1
         else:
-            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'")
+            print(f"'{user_answer}' is wrong answer ;(.", end=' ')
+            print(f"Correct answer was '{correct_answer}'")
             print(f"Let's try again, {username}!")
             print("Better luck next time!")
             return
